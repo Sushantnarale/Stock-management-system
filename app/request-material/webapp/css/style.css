@@ -1,0 +1,88 @@
+/* Enter your custom styles here */
+.customBoldLabel .sapMLabelTextWrapper {
+    font-weight: bold;
+    font-size: 1rem; /* Increase as needed */
+}
+.fancyInput .sapMInputBaseInner {
+    border: 2px solid #0070f2;          /* SAP blue border */
+    border-radius: 8px;                 /* Rounded corners */
+    padding: 0.5rem;                    /* Inner spacing */
+    background-color: #f9fbff;          /* Light background */
+    font-size: 1.05rem;
+    transition: 0.3s ease all;
+}
+
+.fancyInput .sapMInputBaseInner:focus {
+    border-color: #005aab;              /* Focus color */
+    box-shadow: 0 0 5px #005aab77;
+}
+
+
+/* Section Panels */
+.sapMPanel {
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+/* Titles */
+.sapMTitle {
+    font-size: 1.3rem;
+    color: #0a5a8c;
+    font-weight: bold;
+}
+
+/* Labels */
+.customBoldLabel {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Input Fields */
+.fancyInput .sapMInputBaseInner {
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+    transition: border-color 0.2s ease;
+}
+.fancyInput .sapMInputBaseInner:focus {
+    border-color: #0070f2;
+}
+
+/* Table Enhancements */
+#materialTable .sapMListTblCell {
+    padding: 0.8rem 1rem;
+    vertical-align: middle;
+}
+
+#materialTable .sapMBtn {
+    margin: 0;
+    background-color: #f3f3f3;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+#materialTable .sapMBtn:hover {
+    background-color: #dceeff;
+}
+
+/* Submit Button Centering & Style */
+.sapUiMediumMarginTop .sapMBtn {
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+/* Add Material Button Centered */
+.sapMButton {
+    margin: 0 0.5rem;
+}
+.myClassTitle{
+    margin-left:220%;
+}
+
+
+.myPanel{
+    background-color: rgba(245,246,247,255);
+}

@@ -1,0 +1,106 @@
+.statusBlack .sapFCardHeaderStatus {
+    color: black !important;
+}
+
+.statusGreen .sapFCardHeaderStatus {
+    color: green !important;
+}
+
+.statusYellow .sapFCardHeaderStatus {
+    color: goldenrod !important;
+}
+
+.statusRed .sapFCardHeaderStatus {
+    color: red !important;
+}
+
+
+/* This will stretch the row highlighter bar to full height */
+.customRowHighlight .sapMListTblRowHighlight {
+    height: 100% !important;
+}
+
+
+/* Custom card spacing and style */
+.dashboardCard {
+    margin: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .dashboardCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+  
+
+
+  .customCard {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.materialTable .sapMListTblCell {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem;
+}
+
+.statusText {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.statusText-CLOSED {
+    color: green;
+}
+
+.statusText-P_CLOSED {
+    color: orange;
+}
+
+.statusText-INPROCESS {
+    color: red;
+}
+
+
+
+.filterVBox {
+    margin-right: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.historyPanel {
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+#requestHistoryTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0a6ed1;
+}
+
+.sapMTable .sapMText, .sapMTable .sapMLabel {
+    font-size: 0.95rem;
+}
+
+.sapMTable .sapMListTblCell {
+    padding: 0.75rem;
+}
+
+.sapMPanelHdr {
+    background-color: #f0f4f8;
+    border-radius: 0.5rem 0.5rem 0 0;
+}

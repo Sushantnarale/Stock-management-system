@@ -1,0 +1,147 @@
+<mvc:View controllerName="summarydetails.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:n="sap.f"
+    xmlns:card="sap.f.cards"
+    displayBlock="true">
+
+    <Page title="Create Material Request">
+        <content>
+            <VBox class="sapUiMediumMargin">
+
+                <!-- Material Request Details -->
+                <Panel width="100%" class="sapUiContentPadding sapUiMediumMarginBottom">
+                    <VBox>
+                        <Title text="Material Request Details" class="sapUiSmallMarginBottom" />
+                        <form:SimpleForm
+                            layout="ResponsiveGridLayout"
+                            editable="true"
+                            class="sapUiContentPadding"
+                            maxContainerCols="2"
+                            width="90%">
+
+                            <Label text="Employee ID" />
+                            <ComboBox
+                                id="EmployeeIDSelect"
+                                items="{ path: 'empModel>/' }"
+                                selectedKey="{reqModel>/EmployeeID}"
+                                selectionChange=".onEmployeeSelect"
+                                required="true"
+                                placeholder="Search Employee ID...">
+                                <core:Item key="{empModel>EmployeeID}" text="{empModel>EmployeeID} - {empModel>EmployeeName}" />
+                            </ComboBox>
+
+                            <Label text="Requested By" />
+                            <Input value="{reqModel>/reqData/ReqRaisedByEmployeeName}" editable="false" />
+
+                            <Label text="Supervisor" />
+                            <Input value="{reqModel>/reqData/EmployeeSupervisor}" editable="false" />
+
+                            <Label text="Department" />
+                            <Input value="{reqModel>/reqData/EmployeeDepartment}" editable="false" />
+
+                            <Label text="Request Date" />
+                            <DatePicker
+                                value="{reqModel>/reqData/ReqRaisedOn}"
+                                displayFormat="yyyy-MM-dd"
+                                valueFormat="yyyy-MM-dd"
+                                editable="false" />
+                        </form:SimpleForm>
+                    </VBox>
+                </Panel>
+
+                 <!-- // Status Cards
+                <HBox class="sapUiResponsiveContentPadding" wrap="Wrap" alignItems="Start" justifyContent="Start">
+                    <n:Card width="230px" class="dashboardCard">
+                        <n:header>
+                            <card:Header title="Created" subtitle="Requests"
+                                statusText="{reqModel>/statusCounts/CREATED}" iconSrc="sap-icon://create" />
+                        </n:header>
+                    </n:Card>
+
+                    <n:Card width="230px" class="dashboardCard">
+                        <n:header>
+                            <card:Header title="In Process" subtitle="Requests"
+                                statusText="{reqModel>/statusCounts/INPROCESS}" iconSrc="sap-icon://process" />
+                        </n:header>
+                    </n:Card>
+
+                    <n:Card width="230px" class="dashboardCard">
+                        <n:header>
+                            <card:Header title="Partially Closed" subtitle="Requests"
+                                statusText="{reqModel>/statusCounts/P_CLOSED}" iconSrc="sap-icon://pending" />
+                        </n:header>
+                    </n:Card>
+
+                    <n:Card width="230px" class="dashboardCard">
+                        <n:header>
+                            <card:Header title="Closed" subtitle="Requests"
+                                statusText="{reqModel>/statusCounts/CLOSED}" iconSrc="sap-icon://complete" />
+                        </n:header>
+                    </n:Card>
+                </HBox> -->
+
+                <!-- Filters -->
+                <HBox class="sapUiSmallMarginTop sapUiContentPadding sapUiResponsiveContentPadding" alignItems="Center" wrap="Wrap" justifyContent="End">
+                    <VBox>
+                        <Label text="Request Status" />
+                        <Select id="reqStatusSelect" width="200px" change=".onFilterRequestHistory">
+                            <items>
+                                <core:Item key="" text="All"/>
+                                <core:Item key="CREATED" text="Created"/>
+                                <core:Item key="INPROCESS" text="In Process"/>
+                                <core:Item key="P_CLOSED" text="Partially Closed"/>
+                                <core:Item key="CLOSED" text="Closed"/>
+                                <core:Item key="REJECTED" text="Rejected"/>
+                            </items>
+                        </Select>
+                    </VBox>
+
+                    <VBox class="sapUiTinyMarginBegin">
+                        <Label text=" " />
+                        <Button text="Reset Filters" icon="sap-icon://refresh" press=".onResetFilters" type="Default"/>
+                    </VBox>
+                </HBox>
+
+
+                <!-- Request History Table -->
+                <Panel width="100%" class="sapUiContentPadding">
+                    <VBox>
+                        <Title text="Previous Requests by Employee" class="sapUiSmallMarginBottom" />
+                        <Table
+                            id="requestTable"
+                            items="{reqModel>/requestList}"
+                            growing="true"
+                            growingThreshold="5"
+                            noDataText="No previous requests found.">
+
+                            <columns>
+                                <Column><Text text="Request ID" /></Column>
+                                <Column><Text text="Title" /></Column>
+                                <Column><Text text="Status" /></Column>
+                                <Column><Text text="Date Raised" /></Column>
+                                <Column><Text text="Manager Remark" /></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Link text="{reqModel>RequestID}" press=".onPressRequestSummary"/>
+                                        <Text text="{reqModel>ReqTitle}" />
+                                        <Text text="{reqModel>RequestStatus}" />
+                                        <Text text="{reqModel>ReqRaisedOn}" />
+                                        <Text text="{reqModel>SupervisorComments}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </Panel>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

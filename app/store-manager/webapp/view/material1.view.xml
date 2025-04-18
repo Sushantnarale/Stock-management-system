@@ -1,0 +1,105 @@
+<mvc:View
+    controllerName="storemanager.controller.material1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout.form">
+
+    <Page id="materialPage" title="Store Manager - Material Approval">
+        <content>
+            <!-- Request Details Form -->
+            <VBox class="customCard sapUiMediumMargin">
+                <layout:SimpleForm
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    labelSpanM="2"
+                    labelSpanL="2"
+                    adjustLabelSpan="false"
+                    columnsL="2"
+                    columnsM="2">
+                    
+                    <Label text="Request ID" />
+                    <Text text="{storeModel>/selectedRequest/RequestID}" />
+
+                    <Label text="Title" />
+                    <Text text="{storeModel>/selectedRequest/ReqTitle}" />
+
+                    <Label text="Employee ID" />
+                    <Text text="{storeModel>/selectedRequest/EmployeeID}" />
+
+                    <Label text="Employee Name" />
+                    <Text text="{storeModel>/selectedRequest/ReqRaisedByEmployeeName}" />
+
+                    <Label text="Request Status" />
+                    <Text text="{storeModel>/selectedRequest/RequestStatus}" 
+                          class="statusText statusText-{storeModel>/selectedRequest/RequestStatus}" />
+
+                    <Label text="Request Date" />
+                    <Text text="{storeModel>/selectedRequest/ReqRaisedOn}" />
+                </layout:SimpleForm>
+            </VBox>
+
+          <!-- Material Table -->
+    <VBox class="customCard sapUiMediumMarginTop">
+        <Table id="materialTable" items="{storeModel>/materials}">
+            <columns>
+                <Column><Text text="Material Type" /></Column>
+                <Column><Text text="Material" /></Column>
+                <Column><Text text="Unit" /></Column>
+                <Column><Text text="Quantity" /></Column>
+                <Column><Text text="Available Quantity" /></Column>
+                <Column><Text text="Action" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    highlight="{= ${storeModel>IsMaterialAllocate} ? 'Success' : 'Error' }"
+                    class="customRowHighlight">
+                    <cells>
+                        <Text text="{storeModel>MaterialType}" />
+                        <Text text="{storeModel>MaterialName}" />
+                        <Text text="{storeModel>Unit}" />
+                        <Text text="{storeModel>Quantity}" />
+                        <Input value="{storeModel>AllocatedQuantity}" 
+                            placeholder="Enter quantity" 
+                            enabled="{storeModel>editable}" 
+                            change=".onInputChange" /> <!-- Attach change event -->
+                        <HBox>
+                            <Button text="Approve"
+                                    press=".onApproveSingleMaterial"
+                                    type="Accept"
+                                    enabled="{storeModel>editable}"
+                                    class="sapUiTinyMarginEnd">
+                                <customData>
+                                    <core:CustomData key="id" value="{storeModel>ID}" writeToDom="false" />
+                                </customData>
+                            </Button>
+                            <Button text="Not in Stock"
+                                    enabled="{storeModel>editable}"
+                                    press=".onNotInStockSingleMaterial"
+                                    type="Reject">
+                                <customData>
+                                    <core:CustomData key="id" value="{storeModel>ID}" writeToDom="false" />
+                                </customData>
+                            </Button>
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+                
+                        <Button text="Submit Store Decision"
+                                press=".onSubmitStoreDecision"
+                                type="Emphasized" 
+                                enabled="{storeModel>/editable}" 
+                                class="submitButton" />
+                                <Button
+                        text="Back"
+                        press=".onBack"
+                        type="Emphasized"
+                        width="15%"
+                        class="sapUiTinyMarginTop" />
+
+    </VBox>
+        </content>
+    </Page>
+</mvc:View>

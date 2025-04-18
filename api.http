@@ -1,0 +1,35 @@
+###POST CALL EMP
+POST http://localhost:4004/odata/v4/stock/Employees
+Content-Type: application/json
+
+{
+    
+    "EmployeeID": "2222",
+    "EmployeeName": "Akash Doe",
+    "EmployeeEmail": "akash.doe@example.com",
+    "EmployeeDepartment": "HR",
+    "EmployeeSupervisor": "Jane Smith"
+
+
+}
+
+
+###GET
+GET http://localhost:4004/odata/v4/stock/T_Request?$expand=material
+
+
+
+
+###
+GET http://localhost:4004/odata/v4/stock/getRequestId(EmployeeID='EMP002',ReqTitle='qqq')
+
+
+
+
+###
+GET http://localhost:4004/odata/v4/stock/T_material?$filter=Request_ID eq '99576bbc-de99-4d19-8d2b-9c6189db78f1'
+
+###
+http://localhost:4004/odata/v4/stock/getMaterialsByType(materialType='Civil')
+
+

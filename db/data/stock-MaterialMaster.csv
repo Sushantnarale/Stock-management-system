@@ -1,0 +1,48 @@
+MaterialID,ID,MaterialType,MaterialName,Unit,createdAt,createdBy,modifiedAt,modifiedBy
+CIV-001,11111111-aaaa-bbbb-cccc-000000000001,Civil,Cement,Bag,2024-01-01T09:00:00Z,admin,2024-01-01T09:00:00Z,admin
+CIV-002,11111111-aaaa-bbbb-cccc-000000000002,Civil,Bricks,Piece,2024-01-01T09:10:00Z,admin,2024-01-01T09:10:00Z,admin
+CIV-003,11111111-aaaa-bbbb-cccc-000000000003,Civil,Concrete Mix,Kg,2024-01-01T09:20:00Z,admin,2024-01-01T09:20:00Z,admin
+CIV-004,11111111-aaaa-bbbb-cccc-000000000004,Civil,Steel Rod,Kilogram,2024-01-01T09:30:00Z,admin,2024-01-01T09:30:00Z,admin
+CIV-005,11111111-aaaa-bbbb-cccc-000000000005,Civil,Gravel,Ton,2024-01-01T09:40:00Z,admin,2024-01-01T09:40:00Z,admin
+CIV-006,11111111-aaaa-bbbb-cccc-000000000006,Civil,Sand,Cubic Meter,2024-01-01T09:50:00Z,admin,2024-01-01T09:50:00Z,admin
+ELE-001,22222222-bbbb-cccc-dddd-000000000001,Electrical,Copper Wire,Meter,2024-01-01T10:00:00Z,admin,2024-01-01T10:00:00Z,admin
+ELE-002,22222222-bbbb-cccc-dddd-000000000002,Electrical,LED Bulb,Piece,2024-01-01T10:10:00Z,admin,2024-01-01T10:10:00Z,admin
+ELE-003,22222222-bbbb-cccc-dddd-000000000003,Electrical,Switch Board,Piece,2024-01-01T10:20:00Z,admin,2024-01-01T10:20:00Z,admin
+ELE-004,22222222-bbbb-cccc-dddd-000000000004,Electrical,Electric Fuse,Piece,2024-01-01T10:30:00Z,admin,2024-01-01T10:30:00Z,admin
+ELE-005,22222222-bbbb-cccc-dddd-000000000005,Electrical,Extension Cord,Meter,2024-01-01T10:40:00Z,admin,2024-01-01T10:40:00Z,admin
+ELE-006,22222222-bbbb-cccc-dddd-000000000006,Electrical,Power Socket,Piece,2024-01-01T10:50:00Z,admin,2024-01-01T10:50:00Z,admin
+MECH-001,33333333-cccc-dddd-eeee-000000000001,Mechanical,Bolt M10,Piece,2024-01-01T11:00:00Z,admin,2024-01-01T11:00:00Z,admin
+MECH-002,33333333-cccc-dddd-eeee-000000000002,Mechanical,Gear Box,Piece,2024-01-01T11:10:00Z,admin,2024-01-01T11:10:00Z,admin
+MECH-003,33333333-cccc-dddd-eeee-000000000003,Mechanical,Bearing,Piece,2024-01-01T11:20:00Z,admin,2024-01-01T11:20:00Z,admin
+MECH-004,33333333-cccc-dddd-eeee-000000000004,Mechanical,Sprocket,Piece,2024-01-01T11:30:00Z,admin,2024-01-01T11:30:00Z,admin
+MECH-005,33333333-cccc-dddd-eeee-000000000005,Mechanical,Hydraulic Pump,Piece,2024-01-01T11:40:00Z,admin,2024-01-01T11:40:00Z,admin
+MECH-006,33333333-cccc-dddd-eeee-000000000006,Mechanical,Shaft,Piece,2024-01-01T11:50:00Z,admin,2024-01-01T11:50:00Z,admin
+MED-001,44444444-dddd-eeee-ffff-000000000001,Medical,Face Mask,Box,2024-01-01T12:00:00Z,admin,2024-01-01T12:00:00Z,admin
+MED-002,44444444-dddd-eeee-ffff-000000000002,Medical,Hand Sanitizer,Bottle,2024-01-01T12:10:00Z,admin,2024-01-01T12:10:00Z,admin
+MED-003,44444444-dddd-eeee-ffff-000000000003,Medical,Gloves,Box,2024-01-01T12:20:00Z,admin,2024-01-01T12:20:00Z,admin
+MED-004,44444444-dddd-eeee-ffff-000000000004,Medical,Disposable Syringe,Box,2024-01-01T12:30:00Z,admin,2024-01-01T12:30:00Z,admin
+MED-005,44444444-dddd-eeee-ffff-000000000005,Medical,First Aid Kit,Box,2024-01-01T12:40:00Z,admin,2024-01-01T12:40:00Z,admin
+MED-006,44444444-dddd-eeee-ffff-000000000006,Medical,Thermometer,Piece,2024-01-01T12:50:00Z,admin,2024-01-01T12:50:00Z,admin
+CHEM-001,55555555-eeee-ffff-gggg-000000000001,Chemical,Adhesive Glue,Litre,2024-01-01T13:00:00Z,admin,2024-01-01T13:00:00Z,admin
+CHEM-002,55555555-eeee-ffff-gggg-000000000002,Chemical,Paint Can,Litre,2024-01-01T13:10:00Z,admin,2024-01-01T13:10:00Z,admin
+CHEM-003,55555555-eeee-ffff-gggg-000000000003,Chemical,Solvent Bottle,Litre,2024-01-01T13:20:00Z,admin,2024-01-01T13:20:00Z,admin
+CHEM-004,55555555-eeee-ffff-gggg-000000000004,Chemical,Cleaning Agent,Litre,2024-01-01T13:30:00Z,admin,2024-01-01T13:30:00Z,admin
+CHEM-005,55555555-eeee-ffff-gggg-000000000005,Chemical,Lubricant Oil,Litre,2024-01-01T13:40:00Z,admin,2024-01-01T13:40:00Z,admin
+CHEM-006,55555555-eeee-ffff-gggg-000000000006,Chemical,Rust Remover,Litre,2024-01-01T13:50:00Z,admin,2024-01-01T13:50:00Z,admin
+STAT-001,66666666-ffff-gggg-hhhh-000000000001,Stationery,Notebook,Piece,2024-01-01T14:00:00Z,admin,2024-01-01T14:00:00Z,admin
+STAT-002,66666666-ffff-gggg-hhhh-000000000002,Stationery,Pen,Piece,2024-01-01T14:10:00Z,admin,2024-01-01T14:10:00Z,admin
+STAT-003,66666666-ffff-gggg-hhhh-000000000003,Stationery,Marker,Piece,2024-01-01T14:20:00Z,admin,2024-01-01T14:20:00Z,admin
+STAT-004,66666666-ffff-gggg-hhhh-000000000004,Stationery,Eraser,Piece,2024-01-01T14:30:00Z,admin,2024-01-01T14:30:00Z,admin
+STAT-005,66666666-ffff-gggg-hhhh-000000000005,Stationery,Stapler,Piece,2024-01-01T14:40:00Z,admin,2024-01-01T14:40:00Z,admin
+STAT-006,66666666-ffff-gggg-hhhh-000000000006,Stationery,Highlighter,Piece,2024-01-01T14:50:00Z,admin,2024-01-01T14:50:00Z,admin
+FOOD-001,77777777-gggg-hhhh-iiii-000000000001,Food,Bottled Water,Bottle,2024-01-01T15:00:00Z,admin,2024-01-01T15:00:00Z,admin
+FOOD-002,77777777-gggg-hhhh-iiii-000000000002,Food,Biscuits,Pack,2024-01-01T15:10:00Z,admin,2024-01-01T15:10:00Z,admin
+FOOD-003,77777777-gggg-hhhh-iiii-000000000003,Food,Instant Noodles,Pack,2024-01-01T15:20:00Z,admin,2024-01-01T15:20:00Z,admin
+FOOD-004,77777777-gggg-hhhh-iiii-000000000004,Food,Juice Box,Pack,2024-01-01T15:30:00Z,admin,2024-01-01T15:30:00Z,admin
+FOOD-005,77777777-gggg-hhhh-iiii-000000000005,Food,Coffee Sachet,Pack,2024-01-01T15:40:00Z,admin,2024-01-01T15:40:00Z,admin
+FOOD-006,77777777-gggg-hhhh-iiii-000000000006,Food,Tea Bags,Box,2024-01-01T15:50:00Z,admin,2024-01-01T15:50:00Z,admin
+CLEAN-001,88888888-hhhh-iiii-jjjj-000000000001,Cleaning,Broom,Piece,2024-01-01T16:00:00Z,admin,2024-01-01T16:00:00Z,admin
+CLEAN-002,88888888-hhhh-iiii-jjjj-000000000002,Cleaning,Mop,Piece,2024-01-01T16:10:00Z,admin,2024-01-01T16:10:00Z,admin
+CLEAN-003,88888888-hhhh-iiii-jjjj-000000000003,Cleaning,Floor Cleaner,Bottle,2024-01-01T16:20:00Z,admin,2024-01-01T16:20:00Z,admin
+CLEAN-004,88888888-hhhh-iiii-jjjj-000000000004,Cleaning,Dustpan,Piece,2024-01-01T16:30:00Z,admin,2024-01-01T16:30:00Z,admin
+CLEAN-005,88888888-hhhh-iiii-jjjj-000000000005,Cleaning,Garbage Bag,Roll,2024-01-01T16:40:00Z,admin,2024-01-01T16:40:00Z,admin

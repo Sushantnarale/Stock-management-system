@@ -1,0 +1,119 @@
+<mvc:View controllerName="requestmaterial.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+
+    <Page title="Create Material Request">
+        <content>
+            <VBox class="sapUiMediumMargin">
+
+                <!-- Material Request Details -->
+                <Panel width="100%" class="sapUiContentPadding sapUiMediumMarginBottom">
+                    <VBox>
+                        <Title text="Material Request Details" class="sapUiSmallMarginBottom" />
+                        <form:SimpleForm
+                            layout="ResponsiveGridLayout"
+                            editable="true"
+                            class="sapUiContentPadding"
+                            maxContainerCols="2"
+                            width="90%">
+
+                            <Label text="Employee ID" />
+                            <ComboBox
+                                id="EmployeeIDSelect"
+                                
+                                items="{ path: 'empModel>/' }"
+                                selectedKey="{reqModel>/EmployeeID}"
+                                selectionChange=".onEmployeeSelect"
+                                required="true"
+                                placeholder="Search Employee ID...">
+                                <core:Item key="{empModel>EmployeeID}" text="{empModel>EmployeeID} - {empModel>EmployeeName}" />
+                            </ComboBox>
+
+                            <Label text="Requested By" />
+                            <Input value="{reqModel>/reqData/ReqRaisedByEmployeeName}" editable="false" />
+
+                            <Label text="Supervisor" />
+                            <Input value="{reqModel>/reqData/EmployeeSupervisor}" editable="false" />
+
+                            <Label text="Department" />
+                            <Input value="{reqModel>/reqData/EmployeeDepartment}" editable="false" />
+
+                            <Label text="Request Date" />
+                            <DatePicker
+                                value="{reqModel>/reqData/ReqRaisedOn}"
+                                displayFormat="yyyy-MM-dd"
+                                valueFormat="yyyy-MM-dd"
+                                editable="false" />
+                        </form:SimpleForm>
+                    </VBox>
+                </Panel>
+
+                <!-- Request Title Panel -->
+                <Panel width="100%" class="sapUiContentPadding sapUiMediumMarginBottom">
+                    <VBox class="sapUiSmallMarginBottom" width="100%">
+                        <Label text="Request Title" required="true" class="customBoldLabel sapUiSmallMarginBottom" />
+                        <Input
+                            id="ReqTitle"
+                            value="{reqModel>/reqData/ReqTitle}"
+                            required="true"
+                            type="Text"
+                            width="100%"
+                            class="fancyInput" />
+                    </VBox>
+                </Panel>
+
+                <!-- Material List Section -->
+                <Panel width="100%" class="sapUiContentPadding">
+                    <VBox>
+                        <Title text="Material Details" class="sapUiSmallMarginBottom" />
+
+                        <HBox justifyContent="Center" class="sapUiSmallMarginBottom">
+                            <Button text="Add Material" press=".onAddMaterial" />
+                        </HBox>
+
+                        <Table id="materialTable" items="{reqModel>/reqData/material}" width="100%">
+                            <columns>
+                                <Column><Text text="Material Name" /></Column>
+                                <Column><Text text="Material Type" /></Column>
+                                <Column><Text text="Material ID" /></Column>
+                                <Column><Text text="Unit" /></Column>
+                                <Column><Text text="Reason" /></Column>
+                                <Column><Text text="Quantity" /></Column>
+                                <Column><Text text="Action" /></Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <ComboBox
+                                            selectedKey="{reqModel>MaterialName}"
+                                            selectionChange=".onMaterialNameChange"
+                                            items="{materialModel>/MaterialNames}"
+                                            placeholder="Search Material Name..."
+                                            required="true">
+                                            <core:Item key="{materialModel>MaterialName}" text="{= ${materialModel>MaterialName} + ' (' + ${materialModel>MaterialID} + ')' }" />
+                                        </ComboBox>
+
+                                        <Text text="{reqModel>MaterialType}" />
+                                        <Text text="{reqModel>MaterialID}" />
+                                        <Text text="{reqModel>Unit}" />
+                                        <Input value="{reqModel>Reason}" required="true" type="Text" />
+                                        <Input value="{reqModel>Quantity}" type="Number" required="true" />
+                                        <Button text="Remove" press=".onRemoveMaterial" type="Reject" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </Panel>
+
+                <!-- Submit Button -->
+                <HBox justifyContent="Center" class="sapUiMediumMarginTop">
+                    <Button text="Submit" press=".onSubmit" type="Emphasized" width="300px" />
+                </HBox>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

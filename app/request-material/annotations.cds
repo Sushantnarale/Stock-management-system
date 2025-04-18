@@ -1,0 +1,1 @@
+using StockService as service from '../../srv/service';
