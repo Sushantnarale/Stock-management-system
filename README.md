@@ -50,16 +50,17 @@ This application facilitates:
 ---
 
 ## Getting Started
-
 ### Prerequisites
 
-Ensure you have the following tools installed:
+To run this project in SAP Business Application Studio (BAS), ensure the following:
 
-- **Node.js** (v14+ recommended)
-- **SAP Cloud Application Programming (CAP)** environment
-- **SAPUI5** tools (for frontend development)
-- **SAP HANA Cloud** (or another compatible database) configured
-  
+- **SAP BAS** with a *Full Stack Cloud Application* dev space
+- **Node.js** (v14 or later) – pre-installed in BAS
+- **CAP CLI** – available by default in BAS
+- **SAPUI5 extensions** enabled in BAS
+- **SAP HANA Cloud** instance (configured and bound via BTP Cockpit)
+- **Cloud Foundry CLI (`cf`)** for deployment
+
 ### Installation Steps
 
 1. **Clone the Repository**:
