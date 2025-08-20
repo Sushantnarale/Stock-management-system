@@ -8,6 +8,10 @@ modules:
   path: gen/srv
   requires:
   - name: Stock-management-system-db
+<<<<<<< HEAD
+=======
+  - name: Stock-management-system-auth
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
   provides:
   - name: srv-api
     properties:
@@ -90,6 +94,39 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
+<<<<<<< HEAD
+=======
+- name: Stock-management-system-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: Stock-management-system-destination-service
+    parameters:
+      content-target: true
+  - name: Stock-management-system-repo-host
+    parameters:
+      service-key:
+        name: Stock-management-system-repo-host-key
+  - name: Stock-management-system-auth
+    parameters:
+      service-key:
+        name: Stock-management-system-auth-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: stockprojectcapm_Stock_management_system_repo_host
+          ServiceInstanceName: Stock-management-system-html5-service
+          ServiceKeyName: Stock-management-system-repo-host-key
+          sap.cloud.service: stockprojectcapm
+        - Authentication: OAuth2UserTokenExchange
+          Name: stockprojectcapm_Stock_management_system_auth
+          ServiceInstanceName: Stock-management-system-auth
+          ServiceKeyName: Stock-management-system-auth-key
+          sap.cloud.service: stockprojectcapm
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
 resources:
 - name: Stock-management-system-db
   type: com.sap.xs.hdi-container
@@ -106,7 +143,11 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     config:
+<<<<<<< HEAD
       HTML5Runtime_enabled: false
+=======
+      HTML5Runtime_enabled: true
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
       init_data:
         instance:
           destinations:
@@ -115,11 +156,35 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+<<<<<<< HEAD
+=======
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
     service-name: Stock-management-system-destination-service
     service-plan: lite
+<<<<<<< HEAD
+=======
+  requires:
+  - name: srv-api
+- name: Stock-management-system-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      tenant-mode: dedicated
+      xsappname: Stock-management-system
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true

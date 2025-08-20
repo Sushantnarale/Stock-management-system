@@ -124,7 +124,11 @@ sap.ui.define([
             const reqData = oModel.getProperty("/reqData");
             const todayDate = new Date().toISOString().split("T")[0];
         
+<<<<<<< HEAD
             // validate Employee ID
+=======
+            // 🔍 Validate Employee ID
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             if (!reqData.EmployeeID) {
                 MessageToast.show("Please select an Employee ID.");
                 const oEmployeeSelect = oView.byId("EmployeeIDSelect");
@@ -137,7 +141,11 @@ sap.ui.define([
                 oView.byId("EmployeeIDSelect").setValueState("None");
             }
         
+<<<<<<< HEAD
             //  Validate other derived employee fields
+=======
+            // 🔍 Validate other derived employee fields
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             if (!reqData.ReqRaisedByEmployeeName || !reqData.EmployeeSupervisor) {
                 MessageToast.show("Employee details are incomplete. Please select a valid Employee ID.");
                 return;
@@ -149,13 +157,21 @@ sap.ui.define([
                 return;
             }
         
+<<<<<<< HEAD
             //  Validate at least one material
+=======
+            // 🔍 Validate at least one material
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             if (!reqData.material || reqData.material.length === 0) {
                 MessageToast.show("At least one material entry is required!");
                 return;
             }
         
+<<<<<<< HEAD
             //  Material List Validation
+=======
+            // ✨ Material List Validation
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             const materialNamesSet = new Set();
             for (let i = 0; i < reqData.material.length; i++) {
                 const item = reqData.material[i];
@@ -170,7 +186,11 @@ sap.ui.define([
                 materialNamesSet.add(item.MaterialName);
             }
         
+<<<<<<< HEAD
             // Prepare payload
+=======
+            // ✅ Prepare payload
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             const postData = {
                 EmployeeID: reqData.EmployeeID,
                 EmployeeSupervisor: reqData.EmployeeSupervisor,
@@ -194,7 +214,11 @@ sap.ui.define([
                 }))
             };
         
+<<<<<<< HEAD
             // Submit data
+=======
+            // 📨 Submit data
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
             const serviceUrl = this.getOwnerComponent().getModel().sServiceUrl;
             const url = `${serviceUrl}T_Request`;
         

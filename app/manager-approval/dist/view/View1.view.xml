@@ -1,0 +1,155 @@
+<mvc:View controllerName="managerapproval.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:n="sap.f"
+    xmlns:card="sap.f.cards">
+
+    <Page id="page" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+
+            <!-- Status Cards -->
+            <HBox class="sapUiResponsiveContentPadding" wrap="Wrap" alignItems="Start">
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="Created" subtitle="Requests"
+                            statusText="{reqModel>/statusCounts/CREATED}" iconSrc="sap-icon://create" />
+                    </n:header>
+                </n:Card>
+
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="In Process" subtitle="Requests"
+                            statusText="{reqModel>/statusCounts/INPROCESS}" iconSrc="sap-icon://process" />
+                    </n:header>
+                </n:Card>
+
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="Closed" subtitle="Requests"
+                            statusText="{reqModel>/statusCounts/CLOSED}" iconSrc="sap-icon://complete" />
+                    </n:header>
+                </n:Card>
+            </HBox>
+
+            <!-- Filters
+            <HBox class="sapUiContentPadding sapUiResponsiveContentPadding" alignItems="Center" wrap="Wrap">
+                <VBox class="filterVBox">
+                    <Label text="Requester Name" labelFor="reqNameInput"/>
+                    <Input id="reqNameInput" placeholder="Enter requester name..."
+                           width="220px" liveChange=".onFilterRequestHistory"/>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text="Supervisor Name" labelFor="supNameInput"/>
+                    <Input id="supNameInput" placeholder="Enter supervisor name..."
+                           width="220px" liveChange=".onFilterRequestHistory"/>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text="Request Status" labelFor="reqStatusSelect"/>
+                    <Select id="reqStatusSelect" width="220px" change=".onFilterRequestHistory">
+                        <items>
+                            <core:Item key="" text="All"/>
+                            <core:Item key="CREATED" text="Created"/>
+                            <core:Item key="INPROCESS" text="In Process"/>
+                            <core:Item key="P_CLOSED" text="Partially Closed"/>
+                            <core:Item key="CLOSED" text="Closed"/>
+                            <core:Item key="REJECTED" text="Rejected"/>
+                        </items>
+                    </Select>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text=" "/>
+                    <Button text="Reset Filters" icon="sap-icon://refresh" press=".onResetFilters" type="Default"/>
+                </VBox>
+            </HBox> -->
+<!-- Filters -->
+            <HBox class="sapUiContentPadding sapUiResponsiveContentPadding" alignItems="Center" wrap="Wrap">
+                
+                <!-- Requester Name ComboBox -->
+                <VBox class="filterVBox">
+                    <Label text="Requester Name" labelFor="reqNameCombo"/>
+                    <ComboBox id="reqNameCombo"
+                            width="220px"
+                            items="{reqModel>/RequesterNames}"
+                            selectedKey="{reqModel>/selectedRequester}"
+                            change=".onFilterRequestHistory"
+                            placeholder="Select or search requester...">
+                        <core:Item key="{reqModel>ReqRaisedByEmployeeName}" text="{reqModel>ReqRaisedByEmployeeName}" />
+                    </ComboBox>
+                </VBox>
+
+                <!-- Supervisor Name ComboBox -->
+                <VBox class="filterVBox">
+                    <Label text="Supervisor Name" labelFor="supNameCombo"/>
+                    <ComboBox id="supNameCombo"
+                            width="220px"
+                            items="{reqModel>/SupervisorNames}"
+                            selectedKey="{reqModel>/selectedSupervisor}"
+                            change=".onFilterRequestHistory"
+                            placeholder="Select or search supervisor...">
+                        <core:Item key="{reqModel>EmployeeSupervisor}" text="{reqModel>EmployeeSupervisor}" />
+                    </ComboBox>
+                </VBox>
+
+                <!-- Request Status Select (as before) -->
+                <VBox class="filterVBox">
+                    <Label text="Request Status" labelFor="reqStatusSelect"/>
+                    <Select id="reqStatusSelect" width="220px" change=".onFilterRequestHistory">
+                        <items>
+                            <core:Item key="" text="All"/>
+                            <core:Item key="CREATED" text="Created"/>
+                            <core:Item key="INPROCESS" text="In Process"/>
+                            <core:Item key="P_CLOSED" text="Partially Closed"/>
+                            <core:Item key="CLOSED" text="Closed"/>
+                            <core:Item key="REJECTED" text="Rejected"/>
+                        </items>
+                    </Select>
+                </VBox>
+
+                <!-- Reset Button -->
+                <VBox class="filterVBox">
+                    <Label text=" "/>
+                    <Button text="Reset Filters" icon="sap-icon://refresh" press=".onResetFilters" type="Default"/>
+                </VBox>
+            </HBox>
+
+            <!-- Request History Panel -->
+            <Panel id="requestHistoryPanel" width="100%" class="historyPanel">
+                <HBox id="requestHistoryBox" class="sapUiSmallMarginBottom">
+                    <Title id="requestHistoryTitle" text="Request History"/>
+                </HBox>
+
+                <Table id="requestTable" items="{reqModel>/requestList}" width="100%" headerText="Request History">
+                    <columns>
+                        <Column><Text text="Request ID"/></Column>
+                        <Column><Text text="Requester Name"/></Column>
+                        <Column><Text text="Supervisor"/></Column>
+                        <Column><Text text="Request Title"/></Column>
+                        <Column><Text text="Request Status"/></Column>
+                        <Column><Text text="Action Taken"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{reqModel>RequestID}"/>
+                                <Text text="{reqModel>ReqRaisedByEmployeeName}"/>
+                                <Text text="{reqModel>EmployeeSupervisor}"/>
+                                <Text text="{reqModel>ReqTitle}"/>
+                                <ObjectStatus
+                                    text="{reqModel>RequestStatus}"
+                                    state="{
+                                        path: 'reqModel>RequestStatus',
+                                        formatter: '.statusStateFormatter'
+                                    }"/>
+                                <Button icon="sap-icon://action" press="onActionPress"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

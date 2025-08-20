@@ -1,0 +1,133 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout.form"
+    controllerName="managerapproval.controller.materialView">
+
+    <Page title="Material Details Page">
+        <content>
+
+            <!-- Header Card -->
+            <VBox class="customCard sapUiMediumMargin">
+                <layout:SimpleForm
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    labelSpanM="2"
+                    labelSpanL="2"
+                    adjustLabelSpan="false"
+                    columnsL="2"
+                    columnsM="2">
+
+                    <Label text="Request ID" />
+                    <Text text="{reqModel1>/requestHeader/RequestID}" />
+
+                    <Label text="Title" />
+                    <Text text="{reqModel1>/requestHeader/ReqTitle}" />
+
+                    <Label text="Employee ID" />
+                    <Text text="{reqModel1>/requestHeader/EmployeeID}" />
+
+                    <Label text="Employee Name" />
+                    <Text text="{reqModel1>/requestHeader/ReqRaisedByEmployeeName}" />
+
+                    <Label text="Req Status" />
+                    <Text
+                        text="{reqModel1>/requestHeader/RequestStatus}"
+                        class="statusText statusText-{reqModel1>/requestHeader/RequestStatus}" />
+
+                    <Label text="Request Date" />
+                    <Text text="{reqModel1>/requestHeader/ReqRaisedOn}" />
+                </layout:SimpleForm>
+            </VBox>
+
+            <!-- Table Section -->
+            <VBox class="customCard sapUiMediumMargin" alignItems="Stretch">
+                <Table
+                    id="MaterialDetails"
+                    items="{reqModel1>/materials}"
+                    growing="true"
+                    growingThreshold="10"
+                    width="95%"
+                    class="materialTable sapUiResponsiveMargin">
+
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Material Details" level="H2" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <columns>
+                        <Column width="20%"><Text text="Material Required" /></Column>
+                        <Column width="20%"><Text text="Reason" /></Column>
+                        <Column width="15%"><Text text="Unit" /></Column>
+                        <Column width="15%"><Text text="Quantity" /></Column>
+                        <Column width="15%"><Text text="AllocatedQuantity" /></Column>
+                        <Column width="10%"><Text text="Allocated" /></Column>
+                        <Column width="20%"><Text text="Take Action" /></Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem
+                            highlight="{= ${reqModel1>IsOptionalAllow} ? 'Success' : 'Error' }"
+                            class="customRowHighlight">
+
+                            <cells>
+                                <Text text="{reqModel1>MaterialName}" />
+                                <Text text="{reqModel1>Reason}" />
+                                <Text text="{reqModel1>Unit}" />
+                                <Input value="{reqModel1>Quantity}" type="Number" enabled="{reqModel1>editable}" />
+                                <Text text="{reqModel1>AllocatedQuantity}" />
+                                <ObjectStatus
+                                text="{= ${reqModel1>IsMaterialAllocate} ? 'Yes' : 'No'}"
+                                state="{= ${reqModel1>IsMaterialAllocate} ? 'Success' : 'Error'}" />
+
+                                <HBox>
+                                    <Button
+                                        text="Accept"
+                                        type="Accept"
+                                        enabled="{reqModel1>editable}"
+                                        press=".onAccept"
+                                        class="sapUiTinyMarginEnd" />
+                                    <Button
+                                        text="Reject"
+                                        type="Reject"
+                                        enabled="{reqModel1>editable}"
+                                        press=".onReject" />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+            </VBox>
+
+            <!-- Comment Box & Navigation -->
+            <VBox class="customCard sapUiMediumMargin">
+                <TextArea
+                    id="supervisorComment"
+                    required="true"
+                    rows="3"
+                    placeholder="Write your comment here..."
+                    width="100%"
+                    class="sapUiTinyMarginBottom"
+                    visible="{= ${reqModel1>/requestHeader/RequestStatus} !== 'CLOSED' &amp;&amp; ${reqModel1>/requestHeader/RequestStatus} !== 'P_CLOSED' &amp;&amp; ${reqModel1>/requestHeader/RequestStatus} !== 'REJECTED'}" />
+
+                <HBox justifyContent="End" class="sapUiSmallMarginTop">
+                    <Button
+                        text="Submit Comment"
+                        type="Emphasized"
+                        visible="{= ${reqModel1>/requestHeader/RequestStatus} !== 'CLOSED' &amp;&amp; ${reqModel1>/requestHeader/RequestStatus} !== 'P_CLOSED' &amp;&amp; ${reqModel1>/requestHeader/RequestStatus} !== 'REJECTED' }"
+                        press=".onSubmitManager" />
+                </HBox>
+
+                <Button
+                    text="Back"
+                    press=".onNavBack"
+                    type="Emphasized"
+                    width="15%"
+                    class="sapUiTinyMarginTop" />
+            </VBox>
+
+        </content>
+    </Page>
+</mvc:View>

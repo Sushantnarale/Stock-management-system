@@ -1,0 +1,131 @@
+<mvc:View 
+    controllerName="storemanager.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:n="sap.f"
+    xmlns:card="sap.f.cards">
+    <Page id="page" title="Store Manager - Material Requests">
+        <content>
+            <!-- Status Cards -->
+            <HBox class="sapUiResponsiveContentPadding" wrap="Wrap" alignItems="Start">
+                
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="In Process" subtitle="Requests"
+                            statusText="{storeModel>/statusCounts/INPROCESS}" iconSrc="sap-icon://process" />
+                    </n:header>
+                </n:Card>
+                
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="Partiall Closed" subtitle="Requests"
+                            statusText="{storeModel>/statusCounts/P_CLOSED}" iconSrc="sap-icon://create" />
+                    </n:header>
+                </n:Card>
+
+        
+                <n:Card width="250px" class="dashboardCard">
+                    <n:header>
+                        <card:Header title="Closed" subtitle="Requests"
+                            statusText="{storeModel>/statusCounts/CLOSED}" iconSrc="sap-icon://complete" />
+                    </n:header>
+                </n:Card>
+            </HBox>
+
+            <!-- Filters -->
+            <HBox class="sapUiContentPadding sapUiResponsiveContentPadding" alignItems="Center" wrap="Wrap">
+                <VBox class="filterVBox">
+                    <Label text="Requester Name" labelFor="reqNameCombo" />
+                    <ComboBox id="reqNameCombo" width="220px" selectedKey="" selectionChange=".onFilterRequestHistory"
+                        items="{storeModel>/RequesterNames}" placeholder="Enter requester name...">
+                        <core:Item key="{storeModel>ReqRaisedByEmployeeName}" text="{storeModel>ReqRaisedByEmployeeName}" />
+                    </ComboBox>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text="Supervisor Name" labelFor="supNameCombo"/>
+                        <ComboBox id="supNameCombo" width="220px" selectedKey="" selectionChange=".onFilterRequestHistory"
+                            items="{storeModel>/SupervisorNames}" placeholder="Enter supervisor name..." >
+                            <core:Item key="{storeModel>EmployeeSupervisor}" text="{storeModel>EmployeeSupervisor}" />
+                        </ComboBox>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text="Request Status" labelFor="reqStatusSelect"/>
+                    <Select id="reqStatusSelect" width="220px" change=".onFilterRequestHistory">
+                        <items>
+                            <core:Item key="" text="All"/>
+                            <core:Item key="CREATED" text="Created"/>
+                            <core:Item key="INPROCESS" text="In Process"/>
+                            <core:Item key="P_CLOSED" text="Partially Closed"/>
+                            <core:Item key="CLOSED" text="Closed"/>
+                            <core:Item key="REJECTED" text="Rejected"/>
+                        </items>
+                    </Select>
+                </VBox>
+
+                <VBox class="filterVBox">
+                    <Label text=" "/>
+                    <Button text="Reset Filters" icon="sap-icon://refresh" press=".onResetFilters" type="Default"/>
+                </VBox>
+            </HBox>
+
+            <!-- Request Table -->
+            <Table 
+                id="requestTable"
+                items="{storeModel>/requestList}"
+                mode="SingleSelectMaster"
+                selectionChange=".onRequestSelect"
+                width="98%"
+                class="requestTable">
+                <headerToolbar>
+                      <!-- <Select
+                            id="statusFilter"
+                            change=".onFilterChange"
+                            width="200px">
+                            <items>
+                                <core:Item key="" text="All Statuses" />
+                                <core:Item key="CLOSED" text="Closed" />
+                                <core:Item key="P_CLOSED" text="Partially Closed" />
+                                <core:Item key="INPROCESS" text="In Process" />
+                            </items>
+                        </Select> -->
+                            <Toolbar>
+                            <Title text="Approved Requests" />
+                                 <ToolbarSpacer />
+                                    <ToolbarSpacer />
+                            <SearchField
+                                placeholder="Search..."
+                                search=".onSearch"
+                                width="300px" />
+                            </Toolbar>
+
+                </headerToolbar>
+                <columns>
+                    <Column width="100px"><Text text="Request ID" /></Column>
+                    <Column width="200px"><Text text="Request Title" /></Column>
+                    <Column width="150px"><Text text="Employee Name" /></Column>
+                    <Column width="150px"><Text text="Supervisor" /></Column>
+                    <Column width="200px"><Text text="Supervisor Comments" /></Column>
+                    <Column width="100px"><Text text="Status" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{storeModel>RequestID}" />
+                            <Text text="{storeModel>ReqTitle}" />
+                            <Text text="{storeModel>ReqRaisedByEmployeeName}" />
+                            <Text text="{storeModel>EmployeeSupervisor}" />
+                            <Text text="{storeModel>SupervisorComments}" />
+                            <Text text="{storeModel>RequestStatus}"
+                                  class="{= ${storeModel>RequestStatus} === 'CLOSED' ? 'status-approved' : 
+                                           ${storeModel>RequestStatus} === 'P_CLOSED' ? 'status-partially-closed' : 
+                                           'status-in-process'}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -187,7 +187,11 @@ sap.ui.define([
                                 type: "PATCH",
                                 contentType: "application/json",
                                 headers: {
+<<<<<<< HEAD
                                     "TriggeredBy": "manager" //  custom header added
+=======
+                                    "TriggeredBy": "manager" // 👈 custom header added
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
                                 },
                                 data: JSON.stringify({
                                     SupervisorComments: sComment,

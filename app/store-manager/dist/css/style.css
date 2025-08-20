@@ -1,0 +1,177 @@
+/* General table styling */
+.requestTable {
+    margin: 16px;  /* Space around the table */
+    border-collapse: collapse;
+    width: calc(100% - 32px); /* Full width minus margins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff; /* White background */
+}
+
+/* Column headers styling */
+.requestTable th {
+    background-color: #ddeaef; /* Header background color */
+    color: #fff; /* White text color */
+    padding: 12px;
+    text-align: left; /* Align text to the left */
+}
+
+/* Row styling */
+.requestTable td {
+    padding: 10px; /* Padding for table cells */
+    border: 1px solid #ddd; /* Light border for separation */
+}
+
+/* Hover effect for rows */
+.requestTable tr:hover {
+    background-color: #f1f1f1; /* Light gray hover effect */
+}
+
+/* Status colors */
+.status-approved {
+    color: green; /* Green for approved */
+    font-weight: bold; /* Bold text for emphasis */
+}
+.status-rejected {
+    color: red; /* Red for rejected */
+    font-weight: bold; /* Bold text for emphasis */
+}
+.status-pending {
+    color: orange; /* Orange for pending */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+
+.statusBlack .sapFCardHeaderStatus {
+    color: black !important;
+}
+
+.statusGreen .sapFCardHeaderStatus {
+    color: green !important;
+}
+
+.statusYellow .sapFCardHeaderStatus {
+    color: goldenrod !important;
+}
+
+.statusRed .sapFCardHeaderStatus {
+    color: red !important;
+}
+
+
+/* This will stretch the row highlighter bar to full height */
+.customRowHighlight .sapMListTblRowHighlight {
+    height: 100% !important;
+}
+
+
+/* Custom card spacing and style */
+.dashboardCard {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .dashboardCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+  
+
+
+  .customCard {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.materialTable .sapMListTblCell {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem;
+}
+
+.statusText {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.statusText-CLOSED {
+    color: green;
+}
+
+.statusText-P_CLOSED {
+    color: orange;
+}
+
+.statusText-INPROCESS {
+    color: red;
+}
+
+.dashboardCard {
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.dashboardCard:hover {
+    transform: translateY(-5px);
+}
+
+.filterVBox {
+    margin-right: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.historyPanel {
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+#requestHistoryTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0a6ed1;
+}
+
+.sapMTable .sapMText, .sapMTable .sapMLabel {
+    font-size: 0.95rem;
+}
+
+.sapMTable .sapMListTblCell {
+    padding: 0.75rem;
+}
+
+.sapMPanelHdr {
+    background-color: #f0f4f8;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+
+.customToolbar {
+    padding: 10px 20px; /* Adjusts padding inside the toolbar */
+    background-color:rgb(37, 24, 24); /* Light background color for contrast */
+    border-bottom: 1px solid #ddd; /* Optional border for separation */
+    height: 60px; /* Fixed height for the toolbar */
+}
+
+.submitButton {
+    margin-left: 85%; /* Adds space between the button and the spacer */
+    margin-top: 10px; /* Adds space between the button and the spacer */
+
+    padding: 8px 16px; /* Adds padding inside the button */
+    min-width: 200px; /* Ensures button has a minimum width */
+    height: 100px; /* Sets a fixed height for the button */
+    font-size: 1em; /* Adjusts font size */
+}

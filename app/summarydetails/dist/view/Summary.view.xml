@@ -1,0 +1,73 @@
+<mvc:View
+  controllerName="summarydetails.controller.Summary"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true">
+
+  <Page
+    title="Request Summary"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+
+    <content>
+      <VBox class="sapUiMediumMargin sapUiContentPadding sapUiResponsiveMargin">
+
+        <Title text="All Request Summary" level="H2" class="sapUiSmallMarginBottom" />
+
+        <Table
+          id="summaryTable"
+          items="{summary>/}"
+          growing="true"
+          growingThreshold="5"
+          noDataText="No summary found."
+          width="100%">
+
+          <columns>
+            <Column>
+              <Text text="Request ID" />
+            </Column>
+            <Column>
+              <Text text="Status" />
+            </Column>
+            <Column>
+              <Text text="Action Taken" />
+            </Column>
+            <Column>
+              <Text text="Created By" />
+            </Column>
+            <Column>
+              <Text text="Updated By" />
+            </Column>
+            <Column>
+              <Text text="Updated Date" />
+            </Column>
+            <Column>
+              <Text text="Show Materials" />
+            </Column>
+          </columns>
+
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{summary>RequestID}" />
+                <ObjectStatus text="{summary>RequestStatus}" state="Success" />
+                <Text text="{summary>ActionTaken}" />
+                <Text text="{summary>RequestCreatedBy}" />
+                <Text text="{summary>RequestUpdatedBy}" />
+                <Text text="{path: 'summary>CreatedAt', formatter: '.formatDateToDDMMYYYY'}" />
+                <HBox>
+                  <Button
+                    text="See Details"
+                    type="Emphasized"
+                    class="sapUiTinyMargin"
+                    press=".onShowMaterials" />
+                </HBox>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

@@ -24,6 +24,22 @@
           "odataVersion": "4.0"
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "managerapprovalapp-display": {
+          "semanticObject": "managerapprovalapp",
+          "action": "display",
+          "title": "{{managerapprovalapp-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     }
   },
   "sap.ui": {
@@ -43,8 +59,12 @@
     }
   },
   "sap.ui5": {
+<<<<<<< HEAD
     "flexEnabled":false ,
 
+=======
+    "flexEnabled": false,
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     "dependencies": {
       "minUI5Version": "1.134.1",
       "libs": {
@@ -112,7 +132,12 @@
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+<<<<<<< HEAD
         },"TargetView2": {
+=======
+        },
+        "TargetView2": {
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
           "id": "materialView",
           "name": "materialView"
         }
@@ -124,5 +149,12 @@
       "id": "App",
       "async": true
     }
+<<<<<<< HEAD
+=======
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "stockprojectcapm"
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
   }
 }

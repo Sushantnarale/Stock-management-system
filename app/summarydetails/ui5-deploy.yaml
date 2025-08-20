@@ -13,14 +13,21 @@ builder:
       - /test/**
       - /localService/**
   customTasks:
+<<<<<<< HEAD
     - name: webide-extension-task-updateManifestJson
       afterTask: replaceVersion
       configuration:
         appFolder: webapp
         destDir: dist
+=======
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     - name: ui5-task-zipper
       afterTask: generateCachebusterInfo
       configuration:
         archiveName: summarydetails
+<<<<<<< HEAD
+=======
+        relativePaths: true
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
         additionalFiles:
           - xs-app.json

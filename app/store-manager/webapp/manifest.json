@@ -24,6 +24,22 @@
           "odataVersion": "4.0"
         }
       }
+<<<<<<< HEAD
+=======
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "storemanagerapp-display": {
+          "semanticObject": "storemanagerapp",
+          "action": "display",
+          "title": "{{storemanagerapp-display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     }
   },
   "sap.ui": {
@@ -79,7 +95,10 @@
         }
       ]
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
@@ -101,6 +120,7 @@
           ]
         },
         {
+<<<<<<< HEAD
       "pattern": "material1/{requestId}",
       "name": "Material1",
       "target": "Material1"
@@ -117,6 +137,23 @@
   }
 }
 
+=======
+          "pattern": "material1/{requestId}",
+          "name": "Material1",
+          "target": "Material1"
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1"
+        },
+        "Material1": {
+          "id": "material1",
+          "name": "material1"
+        }
+      }
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
     },
     "rootView": {
       "viewName": "storemanager.view.App",
@@ -124,5 +161,12 @@
       "id": "App",
       "async": true
     }
+<<<<<<< HEAD
+=======
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "stockprojectcapm"
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
   }
 }

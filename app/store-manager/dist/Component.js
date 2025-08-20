@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent","storemanager/model/models"],(e,t)=>{"use strict";return e.extend("storemanager.Component",{metadata:{manifest:"json",interfaces:["sap.ui.core.IAsyncContentCreation"]},init(){e.prototype.init.apply(this,arguments);this.setModel(t.createDeviceModel(),"device");this.getRouter().initialize();var s=new sap.ui.model.json.JSONModel({requestList:[],materials:[],isRequestSelected:false});this.setModel(s,"storeModel")}})});
+//# sourceMappingURL=Component.js.map

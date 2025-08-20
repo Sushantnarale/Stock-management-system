@@ -46,7 +46,11 @@ sap.ui.define([
                             oMaterialResponse.value.forEach(function (item) {
                                 item.MaterialDecision = "";
                                 item.selected = true;
+<<<<<<< HEAD
                                 item.editable = isEditable; //  Mark each material row as editable or not
+=======
+                                item.editable = isEditable; // 👈 Mark each material row as editable or not
+>>>>>>> 79315cd (Added material approval UI feature in CAPM project)
                             });
                             oModel.setProperty("/materials", oMaterialResponse.value);
                             oModel.setProperty("/editable", isEditable);
