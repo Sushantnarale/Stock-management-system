@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "STOCK_MATERIALMASTER",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "stock-MaterialMaster.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ","
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "MATERIALID",
+          "ID",
+          "MATERIALTYPE",
+          "MATERIALNAME",
+          "UNIT",
+          "CREATEDAT",
+          "CREATEDBY",
+          "MODIFIEDAT",
+          "MODIFIEDBY"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "MATERIALID": "MaterialID",
+        "ID": "ID",
+        "MATERIALTYPE": "MaterialType",
+        "MATERIALNAME": "MaterialName",
+        "UNIT": "Unit",
+        "CREATEDAT": "createdAt",
+        "CREATEDBY": "createdBy",
+        "MODIFIEDAT": "modifiedAt",
+        "MODIFIEDBY": "modifiedBy"
+      }
+    }
+  ]
+}

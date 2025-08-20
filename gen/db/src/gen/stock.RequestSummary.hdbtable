@@ -1,0 +1,13 @@
+COLUMN TABLE stock_RequestSummary (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  RequestID NVARCHAR(20),
+  RequestCreatedBy NVARCHAR(100),
+  RequestUpdatedBy NVARCHAR(100),
+  ActionTaken NVARCHAR(50),
+  RequestStatus NVARCHAR(20),
+  PRIMARY KEY(ID)
+)

@@ -1,0 +1,19 @@
+VIEW StockService_T_material AS SELECT
+  T_material_0.ID,
+  T_material_0.createdAt,
+  T_material_0.createdBy,
+  T_material_0.modifiedAt,
+  T_material_0.modifiedBy,
+  T_material_0.MaterialType,
+  T_material_0.MaterialID,
+  T_material_0.MaterialName,
+  T_material_0.Unit,
+  T_material_0.Quantity,
+  T_material_0.AllocatedQuantity,
+  T_material_0.Reason,
+  T_material_0.FromDate,
+  T_material_0.ToDate,
+  T_material_0.IsMaterialAllocate,
+  T_material_0.IsOptionalAllow,
+  T_material_0.Request_ID
+FROM stock_T_material AS T_material_0

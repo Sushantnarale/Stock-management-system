@@ -1,0 +1,13 @@
+COLUMN TABLE stock_Employees (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  EmployeeID NVARCHAR(10),
+  EmployeeName NVARCHAR(100),
+  EmployeeEmail NVARCHAR(100),
+  EmployeeDepartment NVARCHAR(100),
+  EmployeeSupervisor NVARCHAR(100),
+  PRIMARY KEY(ID)
+)

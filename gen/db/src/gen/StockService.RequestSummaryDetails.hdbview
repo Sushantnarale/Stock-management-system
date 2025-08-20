@@ -1,0 +1,13 @@
+VIEW StockService_RequestSummaryDetails AS SELECT
+  MaterialSummaryDetails_0.ID,
+  MaterialSummaryDetails_0.summary_ID,
+  MaterialSummaryDetails_0.MaterialType,
+  MaterialSummaryDetails_0.MaterialRequired,
+  MaterialSummaryDetails_0.Reason,
+  MaterialSummaryDetails_0.Unit,
+  MaterialSummaryDetails_0.Quantity,
+  MaterialSummaryDetails_0.AllocatedQuantity,
+  MaterialSummaryDetails_0.ApprovedByManager,
+  MaterialSummaryDetails_0.AllocatedByStoreMgr,
+  MaterialSummaryDetails_0.TakeAction
+FROM stock_MaterialSummaryDetails AS MaterialSummaryDetails_0

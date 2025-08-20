@@ -1,0 +1,14 @@
+COLUMN TABLE stock_MaterialSummaryDetails (
+  ID NVARCHAR(36) NOT NULL,
+  summary_ID NVARCHAR(36),
+  MaterialType NVARCHAR(50),
+  MaterialRequired NVARCHAR(100),
+  Reason NVARCHAR(255),
+  Unit NVARCHAR(20),
+  Quantity INTEGER,
+  AllocatedQuantity INTEGER,
+  ApprovedByManager BOOLEAN,
+  AllocatedByStoreMgr BOOLEAN,
+  TakeAction NVARCHAR(50),
+  PRIMARY KEY(ID)
+)

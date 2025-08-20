@@ -1,0 +1,20 @@
+COLUMN TABLE stock_T_material (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  MaterialType NVARCHAR(50),
+  MaterialID NVARCHAR(10),
+  MaterialName NVARCHAR(100),
+  Unit NVARCHAR(20),
+  Quantity INTEGER,
+  AllocatedQuantity INTEGER DEFAULT 0,
+  Reason NVARCHAR(255),
+  FromDate DATE,
+  ToDate DATE,
+  IsMaterialAllocate BOOLEAN,
+  IsOptionalAllow BOOLEAN,
+  Request_ID NVARCHAR(36),
+  PRIMARY KEY(ID)
+)

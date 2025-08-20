@@ -1,0 +1,15 @@
+VIEW StockService_T_Request AS SELECT
+  T_Request_0.ID,
+  T_Request_0.createdAt,
+  T_Request_0.createdBy,
+  T_Request_0.modifiedAt,
+  T_Request_0.modifiedBy,
+  T_Request_0.RequestID,
+  T_Request_0.EmployeeID,
+  T_Request_0.ReqRaisedByEmployeeName,
+  T_Request_0.ReqRaisedOn,
+  T_Request_0.ReqTitle,
+  T_Request_0.EmployeeSupervisor,
+  T_Request_0.RequestStatus,
+  T_Request_0.SupervisorComments
+FROM stock_T_Request AS T_Request_0

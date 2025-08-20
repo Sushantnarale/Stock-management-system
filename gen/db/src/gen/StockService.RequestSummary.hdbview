@@ -1,0 +1,9 @@
+VIEW StockService_RequestSummary AS SELECT
+  RequestSummary_0.ID,
+  RequestSummary_0.RequestID,
+  RequestSummary_0.RequestStatus,
+  RequestSummary_0.ActionTaken,
+  RequestSummary_0.RequestCreatedBy,
+  RequestSummary_0.RequestUpdatedBy,
+  RequestSummary_0.createdAt AS CreatedAt
+FROM stock_RequestSummary AS RequestSummary_0

@@ -1,0 +1,16 @@
+COLUMN TABLE stock_T_Request (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  RequestID NVARCHAR(20),
+  EmployeeID NVARCHAR(10),
+  ReqRaisedByEmployeeName NVARCHAR(100),
+  ReqRaisedOn DATE,
+  ReqTitle NVARCHAR(100),
+  EmployeeSupervisor NVARCHAR(100),
+  RequestStatus NVARCHAR(20),
+  SupervisorComments NVARCHAR(255),
+  PRIMARY KEY(ID)
+)

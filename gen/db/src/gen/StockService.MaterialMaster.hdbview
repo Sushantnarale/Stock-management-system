@@ -1,0 +1,11 @@
+VIEW StockService_MaterialMaster AS SELECT
+  MaterialMaster_0.ID,
+  MaterialMaster_0.createdAt,
+  MaterialMaster_0.createdBy,
+  MaterialMaster_0.modifiedAt,
+  MaterialMaster_0.modifiedBy,
+  MaterialMaster_0.MaterialID,
+  MaterialMaster_0.MaterialType,
+  MaterialMaster_0.MaterialName,
+  MaterialMaster_0.Unit
+FROM stock_MaterialMaster AS MaterialMaster_0

@@ -1,0 +1,12 @@
+COLUMN TABLE stock_MaterialMaster (
+  ID NVARCHAR(36) NOT NULL,
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  MaterialID NVARCHAR(10) NOT NULL,
+  MaterialType NVARCHAR(50),
+  MaterialName NVARCHAR(100),
+  Unit NVARCHAR(20),
+  PRIMARY KEY(ID, MaterialID)
+)

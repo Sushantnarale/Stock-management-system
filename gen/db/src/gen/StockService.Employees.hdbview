@@ -1,0 +1,12 @@
+VIEW StockService_Employees AS SELECT
+  Employees_0.ID,
+  Employees_0.createdAt,
+  Employees_0.createdBy,
+  Employees_0.modifiedAt,
+  Employees_0.modifiedBy,
+  Employees_0.EmployeeID,
+  Employees_0.EmployeeName,
+  Employees_0.EmployeeEmail,
+  Employees_0.EmployeeDepartment,
+  Employees_0.EmployeeSupervisor
+FROM stock_Employees AS Employees_0
