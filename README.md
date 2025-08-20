@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Welcome to new project.
 # Stock Management System
 
@@ -72,8 +71,7 @@ To run this project in SAP Business Application Studio (BAS), ensure the followi
 =======
 # Getting Started
 
-Welcome to your new project.
->>>>>>> 79315cd (Added material approval UI feature in CAPM project)
+
 
 It contains these folders and files, following our recommended project layout:
 
@@ -93,10 +91,5 @@ File or Folder | Purpose
 - Start adding content, for example, a [db/schema.cds](db/schema.cds).
 
 
-<<<<<<< HEAD
 
-=======
-## Learn More
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
->>>>>>> 79315cd (Added material approval UI feature in CAPM project)
